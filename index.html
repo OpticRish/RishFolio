@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rishabh's Portfolio</title>
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23c9b8f0'/><text x='50' y='72' font-family='serif' font-size='70' font-style='italic' fill='%231a1028' text-anchor='middle'>R</text></svg>">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="tailwind-config.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+<body>
+  <!-- Loading Screen -->
+  <div id="loading-screen">
+    <div class="nav-logo-icon loading-logo">RR</div>
+  </div>
+
+  <div class="cursor" id="cursor">
+    <div class="cursor-r">R</div>
+  </div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- Background -->
+  <div class="bg-orbs">
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+    <div class="orb orb4"></div>
+  </div>
+  <canvas id="starCanvas"></canvas>
+
+  <!-- Nav -->
+  <nav>
+    <div class="nav-brand" onclick="showPage('home'); closeMobileNav();">
+      <div class="nav-logo-icon">RR</div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#" class="active" id="nav-home" onclick="showPage('home'); return false;">Home</a></li>
+      <li><a href="#" id="nav-about" onclick="showPage('about'); return false;">About</a></li>
+      <li><a href="#" id="nav-projects" onclick="showPage('projects'); return false;">Projects</a></li>
+      <li><a href="#" id="nav-skills" onclick="showPage('skills'); return false;">Skills</a></li>
+      <li><a href="#" id="nav-contact" onclick="showPage('contact'); return false;">Contact</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu" onclick="toggleMobileNav()">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Nav Drawer -->
+  <div class="mobile-nav-drawer" id="mobileNav">
+    <a href="#" id="mnav-home" onclick="showPage('home');  closeMobileNav(); return false;">Home</a>
+    <a href="#" id="mnav-about" onclick="showPage('about'); closeMobileNav(); return false;">About</a>
+    <a href="#" id="mnav-projects" onclick="showPage('projects'); closeMobileNav(); return false;">Projects</a>
+    <a href="#" id="mnav-skills" onclick="showPage('skills'); closeMobileNav(); return false;">Skills</a>
+    <a href="#" id="mnav-contact" onclick="showPage('contact'); closeMobileNav(); return false;">Contact</a>
+  </div>
+
+  <!-- ===== HOME ===== -->
+  <div class="page active" id="home">
+    <div class="hero-eyebrow">Available for opportunities ✦</div>
+    <h1 class="hero-name">Hello, I'm <span>Rishabh Raj</span></h1>
+    <p class="hero-title">Student Developer & Digital Dreamer</p>
+    <p class="hero-desc">I craft thoughtful digital experiences where beautiful design meets clean code. Currently
+      exploring the intersection of creativity and technology.</p>
+    <!-- <div class="hero-typing-wrap">
+      I'm a <span class="hero-typing-text" id="typing-text"></span><span class="hero-typing-cursor"></span>
+    </div> -->
+    <div class="hero-cta">
+      <a class="btn-primary" href="#" onclick="showPage('projects'); return false;">View My Work</a>
+      <a class="btn-outline" href="#" onclick="showPage('contact'); return false;">Say Hello</a>
+    </div>
+    <div class="scroll-indicator">
+      <div class="scroll-line"></div>
+      <span class="btn-abt" onclick="showPage('about'); return false;">Explore</span>
+    </div>
+    <div class="copyright" style="position: absolute; bottom: 20px; width: 100%;">&copy; 2026 Rishabh Raj.<br>All rights
+      reserved.</div>
+  </div>
+
+  <!-- ===== ABOUT ===== -->
+  <div class="section-page" id="about">
+    <div class="section-header">
+      <p class="section-eyebrow">Who I am</p>
+      <h2 class="section-title">A little bit <em>about me</em></h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-left">
+        <div class="about-avatar">
+          <div class="avatar-ring"></div>
+          <div class="avatar-initials">RR</div>
+        </div>
+        <div class="about-info">
+          <p>🎓 Computer Science Student</p>
+          <p>💻 Full-Stack Enthusiast</p>
+          <p>📍 Chennai</p>
+
+        </div>
+      </div>
+      <div class="about-right">
+        <p class="about-bio">"I believe great software should feel effortless — the kind that makes you smile the moment
+          you use it."</p>
+        <p class="about-body">I'm a passionate student developer currently pursuing my B.Tech degree in Computer Science
+          Engineering (Specialisation in Software Engineering) from SRMIST Kattankulathur,Chennai. I
+          love building projects that blend aesthetic design with functional code — whether that's a sleek web app, an
+          interactive dashboard, or a creative experiment.</p>
+        <p class="about-body">When I'm not debugging at 2am, you'll find me sketching UI concepts, exploring new
+          frameworks, or getting lost in a good playlist. I'm always looking for the next interesting problem to solve.
+        </p>
+        <div class="about-tags">
+          <div class="tag">Open Source</div>
+          <div class="tag">Web Dev</div>
+          <div class="tag">Design Thinking</div>
+          <div class="tag">Problem Solving</div>
+          <div class="tag">Hackathons</div>
+          <div class="tag">Coffee ☕</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-line">✦ &nbsp; Always learning &nbsp; ✦</div>
+    <div class="copyright">&copy; 2026 Rishabh Raj.<br>All rights reserved.</div>
+  </div>
+
+  <!-- ===== PROJECTS ===== -->
+  <div class="section-page" id="projects">
+    <div class="section-header">
+      <p class="section-eyebrow">What I've built</p>
+      <h2 class="section-title">Selected <em>Projects</em></h2>
+    </div>
+    <div class="projects-grid">
+      <div class="project-card transition-all hover:scale-[1.02]" onclick="openProjectModal('french-tech')">
+        <div class="project-arrow">↗</div>
+        <div class="project-number">01</div>
+        <div class="project-tag">Full Stack</div>
+        <h3 class="project-title">France & Technology</h3>
+        <p class="project-desc">A beautifully minimal website desgined on France and it's home developed technologies.
+        </p>
+        <div class="project-stack">
+          <span class="stack-chip">React</span>
+          <span class="stack-chip">Node.js</span>
+          <span class="stack-chip">Tailwind</span>
+        </div>
+      </div>
+      <div class="project-card transition-all hover:scale-[1.02]" onclick="openProjectModal('chandrayaan3')">
+        <div class="project-arrow">↗</div>
+        <div class="project-number">02</div>
+        <div class="project-tag">Space Tech</div>
+        <h3 class="project-title">Chandrayaan Mission Web</h3>
+        <p class="project-desc">A website purely designed for information on third mission of Chandrayaan.</p>
+        <div class="project-stack">
+          <span class="stack-chip">HTML</span>
+          <span class="stack-chip">Javascript</span>
+          <span class="stack-chip">Tailwind</span>
+        </div>
+      </div>
+
+      <div class="project-card transition-all hover:scale-[1.02]" onclick="openProjectModal('todo-cli')">
+        <div class="project-arrow">↗</div>
+        <div class="project-number">03</div>
+        <div class="project-tag">CLI Tool</div>
+        <h3 class="project-title">To-Do List App</h3>
+        <p class="project-desc">A terminal-based note-taking tool for developers with markdown support, tagging, and
+          instant fuzzy search.</p>
+        <div class="project-stack">
+          <span class="stack-chip">Python</span>
+          <span class="stack-chip">CLI</span>
+          <span class="stack-chip">Terminal</span>
+        </div>
+      </div>
+
+      <!-- <div class="project-card transition-all hover:scale-[1.02]" onclick="openProjectModal('tech-event')">
+        <div class="project-arrow">↗</div>
+        <div class="project-number">04</div>
+        <div class="project-tag">Frontend</div>
+        <h3 class="project-title">Tech Event Web</h3>
+        <p class="project-desc">A clean and responsive promotional website for a technology event showcasing schedules
+          and speakers.</p>
+        <div class="project-stack">
+          <span class="stack-chip">HTML</span>
+          <span class="stack-chip">CSS</span>
+          <span class="stack-chip">Javascript</span>
+        </div>
+      </div> -->
+    </div>
+    <div style="display: flex; justify-content: center; margin: 60px 0 30px;">
+      <span class="btn-abt"
+        onclick="window.open('https://github.com/OpticRish/','_blank'); event.stopPropagation();">More projects on
+        GitHub ↗</span>
+    </div>
+    <div class="copyright">&copy; 2026 Rishabh Raj.<br>All rights reserved.</div>
+  </div>
+
+  <!-- ===== SKILLS ===== -->
+  <div class="section-page" id="skills">
+    <div class="section-header">
+      <p class="section-eyebrow">What I know</p>
+      <h2 class="section-title">My <em>Skills</em></h2>
+    </div>
+    <div class="skills-layout">
+      <div class="skill-category">
+        <div class="skill-category-title">Frontend</div>
+        <div class="tools-cloud">
+          <div class="tool-pill">HTML</div>
+          <div class="tool-pill">CSS</div>
+          <div class="tool-pill">Javascript</div>
+          <div class="tool-pill">Tailwind</div>
+          <div class="tool-pill">React</div>
+        </div>
+      </div>
+      <div class="skill-category">
+
+        <div class="skill-category">
+          <div class="skill-category-title">Backend</div>
+          <div class="tools-cloud">
+            <div class="tool-pill">Node.js</div>
+            <div class="tool-pill">MongoDB</div>
+            <div class="tool-pill">Python</div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="skill-category">
+
+        <div class="skill-category">
+          <div class="skill-category-title">Other Skills</div>
+          <div class="tools-cloud">
+            <div class="tool-pill">Git</div>
+            <div class="tool-pill">GitHub</div>
+            <div class="tool-pill">Figma</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="skill-category">
+      <div class="skill-category-title">Tools & Ecosystem</div>
+      <div class="tools-cloud">
+        <div class="tool-pill">VS Code</div>
+
+        <div class="tool-pill">Vercel</div>
+        <div class="tool-pill">Firebase</div>
+        <div class="tool-pill">Notion</div>
+        <div class="tool-pill">React Bits</div>
+        <div class="tool-pill">Antigravity(MCP SERVER)</div>
+      </div>
+      <br>
+    </div>
+    <br>
+    <div class="footer-line">✦ &nbsp; Always adding to the list &nbsp; ✦</div>
+    <div class="copyright">&copy; 2026 Rishabh Raj.<br>All rights reserved.</div>
+  </div>
+  </div>
+  <!-- <div class="footer-line">✦ &nbsp; Always adding to the list &nbsp; ✦</div> -->
+  </div>
+
+  <!-- ===== CONTACT ===== -->
+  <div class="section-page" id="contact">
+    <div class="section-header">
+      <p class="section-eyebrow">Get in touch</p>
+      <h2 class="section-title">Let's <em>connect</em></h2>
+    </div>
+    <div class="contact-layout">
+      <div class="contact-left">
+        <p class="contact-tagline">"Open to internships, collaborations, and interesting conversations."</p>
+        <div class="contact-links">
+          <a href="mailto:alex@example.com" class="contact-link">
+            <div class="contact-icon email">✉</div>
+            <div>
+              <div
+                style="font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:2px;">
+                Email</div>
+              <div>rajrish0915@gmail.com</div>
+            </div>
+          </a>
+          <a href="https://github.com/OpticRish/" target="_blank" rel="noopener noreferrer" class="contact-link">
+            <div class="contact-icon github">⌘</div>
+            <div>
+              <div
+                style="font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:2px;">
+                GitHub</div>
+              <div>github.com/OpticRish</div>
+            </div>
+          </a>
+          <a href="https://www.linkedin.com/in/rishabh-raj-1a5438371/" target="_blank" rel="noopener noreferrer"
+            class="contact-link">
+            <div class="contact-icon linkedin">in</div>
+            <div>
+              <div
+                style="font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:2px;">
+                LinkedIn</div>
+              <div>linkedin.com/in/rishabh-raj</div>
+            </div>
+          </a>
+
+        </div>
+      </div>
+      <div class="contact-form">
+        <div class="form-group">
+          <label class="form-label">Your name</label>
+          <input type="text" class="form-input" placeholder="What should I call you?">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email address</label>
+          <input type="email" class="form-input" placeholder="your@email.com">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Message</label>
+          <textarea class="form-textarea"
+            placeholder="Tell me about your project, opportunity, or just say hi ✦"></textarea>
+        </div>
+        <button class="btn-primary" style="width:100%;justify-content:center;border:none;"
+          onclick="alert('Message sent successfully! ✦')">Send Message ✦</button>
+      </div>
+    </div>
+    <div class="footer-line">✦ &nbsp; Made with care &nbsp; ✦</div>
+    <div class="copyright">&copy; 2026 Rishabh Raj.<br>All rights reserved.</div>
+  </div>
+
+  <!-- ===== PROJECT MODAL ===== -->
+  <div id="project-modal"
+    class="fixed inset-0 z-[999999] hidden items-center justify-center p-4 sm:p-6 opacity-0 transition-opacity duration-300 flex">
+    <div class="absolute inset-0 project-modal-backdrop bg-deep/50 backdrop-blur-sm" onclick="closeProjectModal()"></div>
+    <div
+      class="relative w-full max-w-4xl bg-mid/30 backdrop-blur-[40px] border border-white/20 border-t-white/30 border-l-white/30 rounded-3xl shadow-[0_8px_32px_rgba(0,0,0,0.5),inset_0_0_32px_rgba(255,255,255,0.05)] overflow-hidden transform scale-95 transition-transform duration-300 flex flex-col md:flex-row h-auto max-h-[90vh]"
+      id="project-modal-content">
+      <button onclick="closeProjectModal()"
+        class="absolute top-4 right-4 text-white/70 hover:text-white bg-deep/40 hover:bg-deep/60 rounded-full w-10 h-10 flex items-center justify-center transition-all z-10 text-2xl border border-white/20 backdrop-blur-md">&times;</button>
+
+      <!-- Image Section -->
+      <div
+        class="w-full md:w-1/2 bg-deep/20 min-h-[250px] relative flex items-center justify-center p-6 border-b md:border-b-0 md:border-r border-white/10">
+        <div
+          class="w-full h-full rounded-xl overflow-hidden border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.3)] relative group">
+          <img id="modal-img" src="" alt="Project Preview"
+            class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
+        </div>
+      </div>
+
+      <!-- Content Section -->
+      <div class="w-full md:w-1/2 p-8 sm:p-10 flex flex-col justify-center overflow-y-auto">
+        <div id="modal-tag"
+          class="inline-block px-3 py-1 bg-lavender/10 text-lavender text-xs uppercase tracking-widest rounded-lg w-max mb-4">
+          Tag</div>
+        <h2 id="modal-title" class="font-serif text-3xl sm:text-4xl text-textPrimary mb-4 leading-tight italic">Project
+          Title</h2>
+        <p id="modal-desc" class="text-muted text-sm sm:text-base leading-relaxed mb-8">Detailed description goes
+          here...</p>
+
+        <div class="mb-8">
+          <h4 class="text-[10px] uppercase tracking-widest text-rose mb-3">Tech Stack</h4>
+          <div id="modal-stack" class="flex flex-wrap gap-2">
+            <!-- Stack chips injected via JS -->
+          </div>
+        </div>
+
+        <div class="flex flex-wrap gap-4 mt-auto pt-4 border-t border-lavender/10">
+          <a id="modal-live-link" href="#" target="_blank"
+            class="px-6 py-3 bg-lavender text-deep rounded-full text-sm font-semibold hover:bg-rose transition-all flex items-center gap-2 shadow-[0_0_15px_rgba(201,184,240,0.3)] hover:scale-105">
+            <span>Visit Live Site</span> ↗
+          </a>
+          <a id="modal-github" href="#" target="_blank"
+            class="px-6 py-3 border border-lavender/30 rounded-full text-sm text-textPrimary hover:border-lavender hover:bg-lavender/10 transition-all flex items-center gap-2 hover:scale-105">
+            <span>GitHub Repo</span> <span class="text-lg">⌘</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
