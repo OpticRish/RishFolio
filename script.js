@@ -85,6 +85,7 @@ function closeProjectModal() {
   }, 300);
 }
 
+
 const cursor = document.getElementById('cursor');
 const ring = document.getElementById('cursorRing');
 let mx = 0, my = 0, rx = 0, ry = 0;
@@ -403,6 +404,17 @@ function showPage(id) {
   const mNavLink = document.getElementById('mnav-' + id);
   if (mNavLink) mNavLink.classList.add('active');
 
+  // Toggle back button for education page
+  const backBtn = document.getElementById('backBtn');
+  const hamburger = document.getElementById('hamburger');
+  if (id === 'education') {
+    backBtn.style.display = 'block';
+    hamburger.style.display = 'none';
+  } else {
+    backBtn.style.display = 'none';
+    hamburger.style.display = 'flex';
+  }
+
   if (id === 'skills') {
     setTimeout(animSkills, 400);
   }
@@ -415,7 +427,7 @@ function animSkills() {
 }
 
 document.addEventListener('keydown', e => {
-  const pages = ['home', 'about', 'projects', 'skills', 'contact'];
+  const pages = ['home', 'about', 'education', 'projects', 'skills', 'contact'];
   const current = [...document.querySelectorAll('.page.active, .section-page.active')].map(el => el.id)[0];
   const idx = pages.indexOf(current);
   if (e.key === 'ArrowRight' && idx < pages.length - 1) showPage(pages[idx + 1]);

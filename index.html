@@ -50,6 +50,9 @@
     <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu" onclick="toggleMobileNav()">
       <span></span><span></span><span></span>
     </button>
+    <button class="nav-back-btn" id="backBtn" aria-label="Go back" onclick="showPage('about'); closeMobileNav();" style="display:none;">
+      ← Back
+    </button>
   </nav>
 
   <!-- Mobile Nav Drawer -->
@@ -121,6 +124,7 @@
           <div class="tag">Hackathons</div>
           <div class="tag">Coffee ☕</div>
         </div>
+        <button class="btn-primary" style="margin-top:2rem;" onclick="showPage('education'); closeMobileNav();">View Education Details →</button>
       </div>
     </div>
     <div class="footer-line">✦ &nbsp; Always learning &nbsp; ✦</div>
@@ -319,6 +323,54 @@
       </form>
     </div>
     <div class="footer-line">✦ &nbsp; Made with care &nbsp; ✦</div>
+    <div class="copyright">&copy; 2026 Rishabh Raj.<br>All rights reserved.</div>
+  </div>
+
+  <!-- ===== EDUCATION ===== -->
+  <div class="section-page" id="education">
+    <div class="section-header">
+      <p class="section-eyebrow">My Journey</p>
+      <h2 class="section-title"><em>Education & Experience</em></h2>
+    </div>
+    <div class="education-container max-w-3xl mx-auto">
+      <!-- B.Tech -->
+      <div class="education-card">
+        <div class="education-header">
+          <div>
+            <h3 class="text-2xl text-lavender font-semibold">B.Tech in Computer Science Engineering</h3>
+            <p class="text-muted text-sm mt-2">Specialisation: Software Engineering</p>
+          </div>
+          <span class="education-year">2025-2029</span>
+        </div>
+        <p class="text-textPrimary mb-3"><strong>SRMIST Kattankulathur, Chennai</strong></p>
+        <p class="text-muted leading-relaxed mb-6">Currently pursuing my degree with focus on software engineering principles, web development, database management, and full-stack technologies. Actively involved in coding competitions and technical projects.</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="px-3 py-1 bg-sky/10 border border-sky/20 rounded-lg text-[11px] text-sky">Programming for Problem Solving</span>
+          <span class="px-3 py-1 bg-sky/10 border border-sky/20 rounded-lg text-[11px] text-sky">Web Development</span>
+          <span class="px-3 py-1 bg-sky/10 border border-sky/20 rounded-lg text-[11px] text-sky">Database Management</span>
+          <span class="px-3 py-1 bg-sky/10 border border-sky/20 rounded-lg text-[11px] text-sky">Object-Oriented Programming</span>
+        </div>
+      </div>
+
+      <!-- Technical Associate -->
+      <div class="education-card">
+        <div class="education-header">
+          <div>
+            <h3 class="text-2xl text-lavender font-semibold">Technical Associate (Web Dev)</h3>
+            <p class="text-muted text-sm mt-2">Coding Ninjas 10X SRM</p>
+          </div>
+          <span class="education-year">2026-Still Going On</span>
+        </div>
+        <p class="text-muted leading-relaxed mb-6">Mentoring students in web development fundamentals, conducting problem-solving sessions, and guiding through real-world projects. Helping students understand core concepts and best practices in modern web technologies.</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="px-3 py-1 bg-mint/10 border border-mint/20 rounded-lg text-[11px] text-mint">Mentoring</span>
+          <span class="px-3 py-1 bg-mint/10 border border-mint/20 rounded-lg text-[11px] text-mint">Guiding</span>
+          <span class="px-3 py-1 bg-mint/10 border border-mint/20 rounded-lg text-[11px] text-mint">Leading</span>
+          <span class="px-3 py-1 bg-mint/10 border border-mint/20 rounded-lg text-[11px] text-mint">Learning</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-line">✦ &nbsp; Always learning & growing &nbsp; ✦</div>
     <div class="copyright">&copy; 2026 Rishabh Raj.<br>All rights reserved.</div>
   </div>
 
