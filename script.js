@@ -3,6 +3,7 @@ const projectsData = {
   'french-tech': {
     title: 'France & Technology',
     tag: 'Full Stack',
+    category: 'fullstack',
     desc: 'Innovative France is a high-end digital hub designed to celebrate the engineering marvels that define the French spirit of discovery. From the wide-body twin-engine logic of Airbus and the record-breaking speed of the TGV, to the tactical air superiority of the Dassault Rafale and the galactic reach of Arianespace.',
     stack: ['React', 'Node.js', 'Tailwind', 'Vite'],
     img: 'https://images.unsplash.com/photo-1499856871958-5b9627545d1a?q=80&w=2020&auto=format&fit=crop',
@@ -12,6 +13,7 @@ const projectsData = {
   'chandrayaan3': {
     title: 'Chandrayaan Mission Web',
     tag: 'Space Tech',
+    category: 'fullstack',
     desc: 'A dedicated website providing comprehensive insights into ISRO\'s Chandrayaan-3 lunar mission. Includes detailed information on launch timeline, objectives, spacecraft design, landing sequence, and scientific achievements. Built to educate and inspire space enthusiasts and curious minds.',
     stack: ['HTML', 'Javascript', 'Tailwind CSS'],
     img: 'https://images.unsplash.com/photo-1614729939124-032f0b56c9ce?q=80&w=2000&auto=format&fit=crop',
@@ -21,6 +23,7 @@ const projectsData = {
   'todo-cli': {
     title: 'To-Do List App',
     tag: 'CLI Tool',
+    category: 'cli',
     desc: 'A simple, yet powerful command-line To-Do List app built completely with core Python. It requires no external libraries and works directly in your terminal, making it incredibly fast and lightweight for developers who prefer living in the console.',
     stack: ['Python', 'CLI', 'Terminal'],
     img: 'https://images.unsplash.com/photo-1629654297299-c8506221ca97?q=80&w=2000&auto=format&fit=crop',
@@ -30,6 +33,7 @@ const projectsData = {
   'tech-event': {
     title: 'Tech Event Web',
     tag: 'Frontend',
+    category: 'fullstack',
     desc: 'A clean and responsive promotional website for a technology event. Designed to showcase schedules, speakers, and ticketing information with a modern aesthetic.',
     stack: ['HTML', 'CSS', 'JavaScript'],
     img: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2000&auto=format&fit=crop',
@@ -83,6 +87,73 @@ function closeProjectModal() {
   setTimeout(() => {
     modal.classList.add('hidden');
   }, 300);
+}
+
+function filterProjects(category) {
+  // Update active class on filter buttons
+  const buttons = document.querySelectorAll('.filter-btn');
+  buttons.forEach(btn => {
+    if (btn.getAttribute('onclick').includes(`'${category}'`)) {
+      btn.classList.add('active');
+    } else {
+      btn.classList.remove('active');
+    }
+  });
+
+  const cards = document.querySelectorAll('.projects-grid .project-card');
+  const emptyState = document.getElementById('projects-empty-state');
+  let visibleCount = 0;
+
+  // Cancel any ongoing filter timeouts to avoid glitchy transitions
+  if (window.filterTimeouts) {
+    window.filterTimeouts.forEach(t => clearTimeout(t));
+    window.filterTimeouts = [];
+  } else {
+    window.filterTimeouts = [];
+  }
+
+  // Handle projects transition
+  cards.forEach(card => {
+    const cardCategory = card.getAttribute('data-category');
+    const matches = (category === 'all' || cardCategory === category);
+
+    if (matches) {
+      visibleCount++;
+      // Show card immediately if it was display: none
+      if (card.style.display === 'none') {
+        card.style.display = 'block';
+        // Force reflow
+        void card.offsetHeight;
+      }
+      card.classList.remove('fade-out');
+      card.classList.add('fade-in');
+    } else {
+      card.classList.remove('fade-in');
+      card.classList.add('fade-out');
+      
+      const timeout = setTimeout(() => {
+        if (card.classList.contains('fade-out')) {
+          card.style.display = 'none';
+        }
+      }, 400);
+      window.filterTimeouts.push(timeout);
+    }
+  });
+
+  // Toggle empty state placeholder with transition
+  if (visibleCount === 0) {
+    const timeout = setTimeout(() => {
+      emptyState.classList.remove('hidden');
+      emptyState.style.display = 'flex';
+      void emptyState.offsetHeight;
+      emptyState.style.opacity = '1';
+    }, 300);
+    window.filterTimeouts.push(timeout);
+  } else {
+    emptyState.classList.add('hidden');
+    emptyState.style.display = 'none';
+    emptyState.style.opacity = '0';
+  }
 }
 
 

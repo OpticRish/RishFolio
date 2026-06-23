@@ -1587,3 +1587,134 @@ body.modal-active {
     font-size: 1.4rem;
   }
 }
+
+/* ===== PROJECT CLASSIFIER / FILTERS ===== */
+.project-filters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 0 auto 40px;
+  padding: 8px;
+  max-width: 800px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 30px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.filter-btn {
+  padding: 10px 22px;
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid transparent;
+  border-radius: 20px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+  color: var(--text);
+  border-color: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.filter-btn.active {
+  color: var(--deep);
+  background: linear-gradient(135deg, var(--lavender), var(--rose));
+  box-shadow: 0 4px 15px rgba(201, 184, 240, 0.3);
+  border-color: transparent;
+}
+
+/* Empty State Placeholder */
+.projects-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 20px;
+  margin: 20px auto;
+  max-width: 500px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  backdrop-filter: blur(10px);
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.projects-empty-state.hidden {
+  display: none !important;
+}
+
+.empty-state-icon {
+  font-size: 40px;
+  color: var(--lavender);
+  margin-bottom: 20px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.empty-state-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  color: var(--text);
+  margin-bottom: 10px;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.empty-state-desc {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* Animations and transitions for filtered cards */
+.project-card {
+  transition: opacity 0.4s cubic-bezier(0.25, 1, 0.5, 1), 
+              transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), 
+              border-color 0.4s, 
+              box-shadow 0.4s !important;
+}
+
+.project-card.fade-out {
+  opacity: 0;
+  transform: scale(0.95) translateY(15px);
+  pointer-events: none;
+}
+
+.project-card.fade-in {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Tablet / Mobile adjustments for filters */
+@media (max-width: 768px) {
+  .project-filters {
+    gap: 8px;
+    padding: 6px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .filter-btn {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+}
+
