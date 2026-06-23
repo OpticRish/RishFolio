@@ -24,26 +24,24 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Custom Scrollbar */
+/* Hide Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--deep);
-}
-
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, var(--lavender), var(--rose));
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, var(--rose), var(--lavender));
-}
-
-::-webkit-scrollbar-button {
   display: none;
+  width: 0;
+}
+
+/* Top Progress Bar */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background: linear-gradient(to right, var(--lavender), var(--rose), var(--peach));
+  width: 0%;
+  z-index: 9999999;
+  border-radius: 0 4px 4px 0;
+  transition: width 0.1s ease-out;
+  box-shadow: 0 0 10px rgba(244, 167, 185, 0.6);
 }
 
 body {

@@ -610,3 +610,14 @@ window.addEventListener('load', () => {
     document.body.classList.add('loaded');
   }, 800);
 });
+
+// Top Scroll Progress Bar Logic
+window.addEventListener('scroll', () => {
+  const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+  const progressBar = document.getElementById('scroll-progress');
+  if (progressBar) {
+    progressBar.style.width = scrolled + '%';
+  }
+});
