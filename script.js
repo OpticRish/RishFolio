@@ -13,7 +13,7 @@ const projectsData = {
   'chandrayaan3': {
     title: 'Chandrayaan Mission Web',
     tag: 'Space Tech',
-    category: 'fullstack',
+    category: 'webdev',
     desc: 'A dedicated website providing comprehensive insights into ISRO\'s Chandrayaan-3 lunar mission. Includes detailed information on launch timeline, objectives, spacecraft design, landing sequence, and scientific achievements. Built to educate and inspire space enthusiasts and curious minds.',
     stack: ['HTML', 'Javascript', 'Tailwind CSS'],
     img: 'https://images.unsplash.com/photo-1614729939124-032f0b56c9ce?q=80&w=2000&auto=format&fit=crop',
@@ -130,25 +130,16 @@ function filterProjects(category) {
     } else {
       card.classList.remove('fade-in');
       card.classList.add('fade-out');
-      
-      const timeout = setTimeout(() => {
-        if (card.classList.contains('fade-out')) {
-          card.style.display = 'none';
-        }
-      }, 400);
-      window.filterTimeouts.push(timeout);
+      card.style.display = 'none';
     }
   });
 
-  // Toggle empty state placeholder with transition
+  // Toggle empty state placeholder without transition lag
   if (visibleCount === 0) {
-    const timeout = setTimeout(() => {
-      emptyState.classList.remove('hidden');
-      emptyState.style.display = 'flex';
-      void emptyState.offsetHeight;
-      emptyState.style.opacity = '1';
-    }, 300);
-    window.filterTimeouts.push(timeout);
+    emptyState.classList.remove('hidden');
+    emptyState.style.display = 'flex';
+    void emptyState.offsetHeight;
+    emptyState.style.opacity = '1';
   } else {
     emptyState.classList.add('hidden');
     emptyState.style.display = 'none';
