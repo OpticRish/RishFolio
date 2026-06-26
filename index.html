@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="styles.css">
   <script src="tailwind-config.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
-  </head>
+</head>
 
 <body>
   <!-- Top Scroll Progress Bar -->
@@ -129,7 +129,8 @@
           <div class="tag">Hackathons</div>
           <div class="tag">Coffee ☕</div>
         </div>
-        <button class="btn-primary" style="margin-top:2rem;" onclick="showPage('education'); closeMobileNav();">View Education Details →</button>
+        <button class="btn-primary" style="margin-top:2rem;" onclick="showPage('education'); closeMobileNav();">View
+          Education Details →</button>
       </div>
     </div>
     <div class="footer-line">✦ &nbsp; Always learning &nbsp; ✦</div>
@@ -160,7 +161,8 @@
       </button>
     </div>
     <div class="projects-grid">
-      <div class="project-card transition-all hover:scale-[1.02]" onclick="openProjectModal('french-tech')" data-category="fullstack">
+      <div class="project-card transition-all hover:scale-[1.02]" onclick="openProjectModal('french-tech')"
+        data-category="fullstack">
         <div class="project-arrow">↗</div>
         <div class="project-number">01</div>
         <div class="project-tag">Full Stack</div>
@@ -173,7 +175,8 @@
           <span class="stack-chip">Tailwind</span>
         </div>
       </div>
-      <div class="project-card transition-all hover:scale-[1.02]" onclick="openProjectModal('chandrayaan3')" data-category="webdev">
+      <div class="project-card transition-all hover:scale-[1.02]" onclick="openProjectModal('chandrayaan3')"
+        data-category="webdev">
         <div class="project-arrow">↗</div>
         <div class="project-number">02</div>
         <div class="project-tag">Space Tech</div>
@@ -186,7 +189,8 @@
         </div>
       </div>
 
-      <div class="project-card transition-all hover:scale-[1.02]" onclick="openProjectModal('todo-cli')" data-category="cli">
+      <div class="project-card transition-all hover:scale-[1.02]" onclick="openProjectModal('todo-cli')"
+        data-category="cli">
         <div class="project-arrow">↗</div>
         <div class="project-number">03</div>
         <div class="project-tag">CLI Tool</div>
@@ -233,13 +237,14 @@
       <p class="section-eyebrow">What I know</p>
       <h2 class="section-title">My <em>Skills</em></h2>
     </div>
-    
+
     <div class="skills-grid">
       <!-- Frontend Development -->
-      <div class="skills-card">
+      <div class="skills-card frontend">
         <div class="skills-card-icon">⚡</div>
         <h3 class="skills-card-title">Frontend Development</h3>
-        <p class="skills-card-desc">Building responsive, pixel-perfect, and modern web interfaces using state-of-the-art libraries and tools.</p>
+        <p class="skills-card-desc">Building responsive, pixel-perfect, and modern web interfaces using state-of-the-art
+          libraries and tools.</p>
         <div class="tools-cloud">
           <div class="tool-pill">HTML5</div>
           <div class="tool-pill">CSS3</div>
@@ -251,10 +256,11 @@
       </div>
 
       <!-- Backend & Databases -->
-      <div class="skills-card">
+      <div class="skills-card backend">
         <div class="skills-card-icon">⚙️</div>
         <h3 class="skills-card-title">Backend & Databases</h3>
-        <p class="skills-card-desc">Developing scalable server architectures, secure endpoints, and managing reliable databases.</p>
+        <p class="skills-card-desc">Developing scalable server architectures, secure endpoints, and managing reliable
+          databases.</p>
         <div class="tools-cloud">
           <div class="tool-pill">Node.js</div>
           <div class="tool-pill">Express.js</div>
@@ -266,10 +272,11 @@
       </div>
 
       <!-- Tools & Ecosystem -->
-      <div class="skills-card">
+      <div class="skills-card tools">
         <div class="skills-card-icon">🛠️</div>
         <h3 class="skills-card-title">Tools & Developer Ecosystem</h3>
-        <p class="skills-card-desc">Working with industry-standard development ecosystems, design systems, and workflow engines.</p>
+        <p class="skills-card-desc">Working with industry-standard development ecosystems, design systems, and workflow
+          engines.</p>
         <div class="tools-cloud">
           <div class="tool-pill">Git</div>
           <div class="tool-pill">GitHub</div>
@@ -283,10 +290,11 @@
       </div>
 
       <!-- Academics & Leadership -->
-      <div class="skills-card">
+      <div class="skills-card academics">
         <div class="skills-card-icon">🎓</div>
         <h3 class="skills-card-title">Academics & Leadership</h3>
-        <p class="skills-card-desc">Fostering knowledge sharing and engineering fundamentals through peer mentoring and technical leadership.</p>
+        <p class="skills-card-desc">Fostering knowledge sharing and engineering fundamentals through peer mentoring and
+          technical leadership.</p>
         <div class="tools-cloud">
           <div class="tool-pill">Technical Mentoring</div>
           <div class="tool-pill">Object-Oriented Programming (OOP)</div>
@@ -343,10 +351,12 @@
 
         </div>
       </div>
-      <form id="contactForm" class="contact-form" action="https://formspree.io/f/xbdevveg" method="POST" onsubmit="return handleFormSubmit(event)">
+      <form id="contactForm" class="contact-form" action="https://formspree.io/f/xbdevveg" method="POST"
+        onsubmit="return handleFormSubmit(event)">
         <div class="form-group">
           <label class="form-label">Your name</label>
-          <input id="contact-name" name="name" type="text" class="form-input" placeholder="What should I call you?" required>
+          <input id="contact-name" name="name" type="text" class="form-input" placeholder="What should I call you?"
+            required>
         </div>
         <div class="form-group">
           <label class="form-label">Email address</label>
@@ -354,9 +364,11 @@
         </div>
         <div class="form-group">
           <label class="form-label">Message</label>
-          <textarea id="contact-message" name="message" class="form-textarea" placeholder="Tell me about your project, opportunity, or just say hi ✦" required></textarea>
+          <textarea id="contact-message" name="message" class="form-textarea"
+            placeholder="Tell me about your project, opportunity, or just say hi ✦" required></textarea>
         </div>
-        <button type="submit" class="btn-primary" id="submit-btn" style="width:100%;justify-content:center;border:none;">Send Message ✦</button>
+        <button type="submit" class="btn-primary" id="submit-btn"
+          style="width:100%;justify-content:center;border:none;">Send Message ✦</button>
         <p id="contact-status" style="margin-top:1rem;color:var(--lavender);font-size:0.95rem;"></p>
       </form>
     </div>
@@ -381,12 +393,17 @@
           <span class="education-year">2025-2029</span>
         </div>
         <p class="text-textPrimary mb-3"><strong>SRMIST Kattankulathur, Chennai</strong></p>
-        <p class="text-muted leading-relaxed mb-6">Currently pursuing my degree with focus on software engineering principles, web development, database management, and full-stack technologies. Actively involved in coding competitions and technical projects.</p>
+        <p class="text-muted leading-relaxed mb-6">Currently pursuing my degree with focus on software engineering
+          principles, web development, database management, and full-stack technologies. Actively involved in coding
+          competitions and technical projects.</p>
         <div class="flex flex-wrap gap-2">
-          <span class="px-3 py-1 bg-sky/10 border border-sky/20 rounded-lg text-[11px] text-sky">Programming for Problem Solving</span>
+          <span class="px-3 py-1 bg-sky/10 border border-sky/20 rounded-lg text-[11px] text-sky">Programming for Problem
+            Solving</span>
           <span class="px-3 py-1 bg-sky/10 border border-sky/20 rounded-lg text-[11px] text-sky">Web Development</span>
-          <span class="px-3 py-1 bg-sky/10 border border-sky/20 rounded-lg text-[11px] text-sky">Database Management</span>
-          <span class="px-3 py-1 bg-sky/10 border border-sky/20 rounded-lg text-[11px] text-sky">Object-Oriented Programming</span>
+          <span class="px-3 py-1 bg-sky/10 border border-sky/20 rounded-lg text-[11px] text-sky">Database
+            Management</span>
+          <span class="px-3 py-1 bg-sky/10 border border-sky/20 rounded-lg text-[11px] text-sky">Object-Oriented
+            Programming</span>
         </div>
       </div>
 
@@ -400,7 +417,9 @@
           </div>
           <span class="education-year">2026-Still Going On</span>
         </div>
-        <p class="text-muted leading-relaxed mb-6">Mentoring students in web development fundamentals, conducting problem-solving sessions, and guiding through real-world projects. Helping students understand core concepts and best practices in modern web technologies.</p>
+        <p class="text-muted leading-relaxed mb-6">Mentoring students in web development fundamentals, conducting
+          problem-solving sessions, and guiding through real-world projects. Helping students understand core concepts
+          and best practices in modern web technologies.</p>
         <div class="flex flex-wrap gap-2">
           <span class="px-3 py-1 bg-mint/10 border border-mint/20 rounded-lg text-[11px] text-mint">Mentoring</span>
           <span class="px-3 py-1 bg-mint/10 border border-mint/20 rounded-lg text-[11px] text-mint">Guiding</span>
@@ -420,12 +439,16 @@
           </div>
           <span class="education-year">2023-2024</span>
         </div>
-        <p class="text-muted leading-relaxed mb-6">Completed senior secondary education with Physics, Chemistry, Mathematics, and Information Practices. This foundational period solidified my understanding of core scientific principles and introduced me to programming fundamentals. Actively participated in science exhibitions and coding contests, gaining hands-on experience with real-world problem-solving.</p>
+        <p class="text-muted leading-relaxed mb-6">Completed senior secondary education with Physics, Chemistry,
+          Mathematics, and Information Practices. This foundational period solidified my understanding of core
+          scientific principles and introduced me to programming fundamentals. Actively participated in science
+          exhibitions and coding contests, gaining hands-on experience with real-world problem-solving.</p>
         <div class="flex flex-wrap gap-2">
           <span class="px-3 py-1 bg-mint/10 border border-mint/20 rounded-lg text-[11px] text-mint">Physics</span>
           <span class="px-3 py-1 bg-mint/10 border border-mint/20 rounded-lg text-[11px] text-mint">Chemistry</span>
           <span class="px-3 py-1 bg-mint/10 border border-mint/20 rounded-lg text-[11px] text-mint">Mathematics</span>
-          <span class="px-3 py-1 bg-mint/10 border border-mint/20 rounded-lg text-[11px] text-mint">Information Practices</span>
+          <span class="px-3 py-1 bg-mint/10 border border-mint/20 rounded-lg text-[11px] text-mint">Information
+            Practices</span>
         </div>
       </div>
 
@@ -440,12 +463,18 @@
           </div>
           <span class="education-year">2021-2022</span>
         </div>
-        <p class="text-muted leading-relaxed mb-6">Completed secondary education with a strong foundation in science and mathematics. This phase ignited my curiosity about technology and problem-solving. Participated in various competitions and developed strong analytical and logical thinking skills that would later shape my journey into computer science.</p>
+        <p class="text-muted leading-relaxed mb-6">Completed secondary education with a strong foundation in science and
+          mathematics. This phase ignited my curiosity about technology and problem-solving. Participated in various
+          competitions and developed strong analytical and logical thinking skills that would later shape my journey
+          into computer science.</p>
         <div class="flex flex-wrap gap-2">
-          <span class="px-3 py-1 bg-mint/10 border border-mint/20 rounded-lg text-[11px] text-mint">Science & Math</span>
+          <span class="px-3 py-1 bg-mint/10 border border-mint/20 rounded-lg text-[11px] text-mint">Science &
+            Math</span>
           <span class="px-3 py-1 bg-mint/10 border border-mint/20 rounded-lg text-[11px] text-mint">English</span>
-          <span class="px-3 py-1 bg-mint/10 border border-mint/20 rounded-lg text-[11px] text-mint">Social Studies</span>
-          <span class="px-3 py-1 bg-mint/10 border border-mint/20 rounded-lg text-[11px] text-mint">Foundation Building</span>
+          <span class="px-3 py-1 bg-mint/10 border border-mint/20 rounded-lg text-[11px] text-mint">Social
+            Studies</span>
+          <span class="px-3 py-1 bg-mint/10 border border-mint/20 rounded-lg text-[11px] text-mint">Foundation
+            Building</span>
         </div>
       </div>
     </div>
@@ -454,8 +483,7 @@
   </div>
 
   <!-- ===== PROJECT MODAL ===== -->
-  <div id="project-modal"
-    class="fixed inset-0 z-[999999] hidden items-center justify-center p-4 sm:p-6 flex">
+  <div id="project-modal" class="fixed inset-0 z-[999999] hidden items-center justify-center p-4 sm:p-6 flex">
     <div class="absolute inset-0 project-modal-backdrop" onclick="closeProjectModal()"></div>
     <div
       class="relative w-full max-w-4xl bg-mid/30 backdrop-blur-[16px] border border-white/20 border-t-white/30 border-l-white/30 rounded-3xl shadow-[0_8px_32px_rgba(0,0,0,0.5),inset_0_0_32px_rgba(255,255,255,0.05)] overflow-hidden flex flex-col md:flex-row h-auto max-h-[90vh]"
@@ -509,16 +537,17 @@
     <!-- Backdrop -->
     <div class="absolute inset-0 mobile-filter-backdrop" onclick="closeMobileFilter()"></div>
     <!-- Drawer Content -->
-    <div id="mobile-filter-content" class="relative w-full bg-mid/95 backdrop-blur-[16px] border-t border-white/10 rounded-t-[32px] shadow-[0_-8px_32px_rgba(0,0,0,0.5)] flex flex-col max-h-[75vh] p-6 pb-10 z-10">
+    <div id="mobile-filter-content"
+      class="relative w-full bg-mid/95 backdrop-blur-[16px] border-t border-white/10 rounded-t-[32px] shadow-[0_-8px_32px_rgba(0,0,0,0.5)] flex flex-col max-h-[75vh] p-6 pb-10 z-10">
       <!-- Drag Handle -->
       <div class="w-12 h-1.5 bg-white/10 rounded-full mx-auto mb-6"></div>
-      
+
       <!-- Header -->
       <div class="flex items-center justify-between mb-6">
         <h3 class="font-serif text-2xl text-textPrimary italic">Filter Projects</h3>
         <button onclick="closeMobileFilter()" class="mobile-filter-close-btn">&times;</button>
       </div>
-      
+
       <!-- Options -->
       <div class="overflow-y-auto flex flex-col gap-3" id="mobile-filter-options">
         <button class="mobile-filter-opt active" data-category="all" onclick="selectMobileFilter('all')">
@@ -549,7 +578,7 @@
     </div>
   </div>
 
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>
