@@ -148,6 +148,15 @@
       <button class="filter-btn" onclick="filterProjects('game')">Game Projects</button>
       <button class="filter-btn" onclick="filterProjects('cli')">CLI Projects</button>
     </div>
+    <div class="mobile-filter-container">
+      <button id="mobile-filter-trigger" class="mobile-filter-trigger-btn" onclick="openMobileFilter()">
+        <span class="flex items-center gap-2">
+          <span class="filter-icon">✦</span>
+          <span class="trigger-label">Filter: All Projects</span>
+        </span>
+        <span class="chevron">▼</span>
+      </button>
+    </div>
     <div class="projects-grid">
       <div class="project-card transition-all hover:scale-[1.02]" onclick="openProjectModal('french-tech')" data-category="fullstack">
         <div class="project-arrow">↗</div>
@@ -433,10 +442,10 @@
 
   <!-- ===== PROJECT MODAL ===== -->
   <div id="project-modal"
-    class="fixed inset-0 z-[999999] hidden items-center justify-center p-4 sm:p-6 opacity-0 transition-opacity duration-300 flex">
-    <div class="absolute inset-0 project-modal-backdrop bg-deep/50 backdrop-blur-sm" onclick="closeProjectModal()"></div>
+    class="fixed inset-0 z-[999999] hidden items-center justify-center p-4 sm:p-6 flex">
+    <div class="absolute inset-0 project-modal-backdrop" onclick="closeProjectModal()"></div>
     <div
-      class="relative w-full max-w-4xl bg-mid/30 backdrop-blur-[40px] border border-white/20 border-t-white/30 border-l-white/30 rounded-3xl shadow-[0_8px_32px_rgba(0,0,0,0.5),inset_0_0_32px_rgba(255,255,255,0.05)] overflow-hidden transform scale-95 transition-transform duration-300 flex flex-col md:flex-row h-auto max-h-[90vh]"
+      class="relative w-full max-w-4xl bg-mid/30 backdrop-blur-[16px] border border-white/20 border-t-white/30 border-l-white/30 rounded-3xl shadow-[0_8px_32px_rgba(0,0,0,0.5),inset_0_0_32px_rgba(255,255,255,0.05)] overflow-hidden flex flex-col md:flex-row h-auto max-h-[90vh]"
       id="project-modal-content">
       <button onclick="closeProjectModal()"
         class="absolute top-4 right-4 text-white/70 hover:text-white bg-deep/40 hover:bg-deep/60 rounded-full w-10 h-10 flex items-center justify-center transition-all z-10 text-2xl border border-white/20 backdrop-blur-md">&times;</button>
@@ -478,6 +487,51 @@
             <span>GitHub Repo</span> <span class="text-lg">⌘</span>
           </a>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== MOBILE FILTER DRAWER ===== -->
+  <div id="mobile-filter-drawer" class="fixed inset-0 z-[999999] hidden flex items-end justify-center">
+    <!-- Backdrop -->
+    <div class="absolute inset-0 mobile-filter-backdrop" onclick="closeMobileFilter()"></div>
+    <!-- Drawer Content -->
+    <div id="mobile-filter-content" class="relative w-full bg-mid/95 backdrop-blur-[16px] border-t border-white/10 rounded-t-[32px] shadow-[0_-8px_32px_rgba(0,0,0,0.5)] flex flex-col max-h-[75vh] p-6 pb-10 z-10">
+      <!-- Drag Handle -->
+      <div class="w-12 h-1.5 bg-white/10 rounded-full mx-auto mb-6"></div>
+      
+      <!-- Header -->
+      <div class="flex items-center justify-between mb-6">
+        <h3 class="font-serif text-2xl text-textPrimary italic">Filter Projects</h3>
+        <button onclick="closeMobileFilter()" class="mobile-filter-close-btn">&times;</button>
+      </div>
+      
+      <!-- Options -->
+      <div class="overflow-y-auto flex flex-col gap-3" id="mobile-filter-options">
+        <button class="mobile-filter-opt active" data-category="all" onclick="selectMobileFilter('all')">
+          <span class="opt-text">All Projects</span>
+          <span class="opt-count">0</span>
+        </button>
+        <button class="mobile-filter-opt" data-category="fullstack" onclick="selectMobileFilter('fullstack')">
+          <span class="opt-text">Full Stack</span>
+          <span class="opt-count">0</span>
+        </button>
+        <button class="mobile-filter-opt" data-category="webdev" onclick="selectMobileFilter('webdev')">
+          <span class="opt-text">Web Dev</span>
+          <span class="opt-count">0</span>
+        </button>
+        <button class="mobile-filter-opt" data-category="ai" onclick="selectMobileFilter('ai')">
+          <span class="opt-text">AI Projects</span>
+          <span class="opt-count">0</span>
+        </button>
+        <button class="mobile-filter-opt" data-category="game" onclick="selectMobileFilter('game')">
+          <span class="opt-text">Game Projects</span>
+          <span class="opt-count">0</span>
+        </button>
+        <button class="mobile-filter-opt" data-category="cli" onclick="selectMobileFilter('cli')">
+          <span class="opt-text">CLI Projects</span>
+          <span class="opt-count">0</span>
+        </button>
       </div>
     </div>
   </div>

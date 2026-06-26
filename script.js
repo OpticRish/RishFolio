@@ -63,34 +63,37 @@ function openProjectModal(projectId) {
   });
 
   const modal = document.getElementById('project-modal');
-  const content = document.getElementById('project-modal-content');
 
   modal.classList.remove('hidden');
-  modal.classList.add('open');
   document.body.classList.add('modal-active');
-  void modal.offsetWidth;
-  modal.classList.remove('opacity-0');
-  content.classList.remove('scale-95');
-  content.classList.add('scale-100');
+  void modal.offsetWidth; // Force layout
+  modal.classList.add('open');
 }
 
 function closeProjectModal() {
   const modal = document.getElementById('project-modal');
-  const content = document.getElementById('project-modal-content');
 
-  modal.classList.add('opacity-0');
   modal.classList.remove('open');
   document.body.classList.remove('modal-active');
-  content.classList.remove('scale-100');
-  content.classList.add('scale-95');
 
   setTimeout(() => {
-    modal.classList.add('hidden');
-  }, 300);
+    if (!modal.classList.contains('open')) {
+      modal.classList.add('hidden');
+    }
+  }, 320);
 }
 
+const categoryNames = {
+  all: 'All Projects',
+  fullstack: 'Full Stack',
+  webdev: 'Web Dev',
+  ai: 'AI Projects',
+  game: 'Game Projects',
+  cli: 'CLI Projects'
+};
+
 function filterProjects(category) {
-  // Update active class on filter buttons
+  // Update active class on desktop filter buttons
   const buttons = document.querySelectorAll('.filter-btn');
   buttons.forEach(btn => {
     if (btn.getAttribute('onclick').includes(`'${category}'`)) {
@@ -99,6 +102,22 @@ function filterProjects(category) {
       btn.classList.remove('active');
     }
   });
+
+  // Update active class on mobile filter options
+  const mobileOpts = document.querySelectorAll('.mobile-filter-opt');
+  mobileOpts.forEach(opt => {
+    if (opt.getAttribute('data-category') === category) {
+      opt.classList.add('active');
+    } else {
+      opt.classList.remove('active');
+    }
+  });
+
+  // Update trigger button label
+  const labelEl = document.querySelector('#mobile-filter-trigger .trigger-label');
+  if (labelEl) {
+    labelEl.textContent = `Filter: ${categoryNames[category] || category}`;
+  }
 
   const cards = document.querySelectorAll('.projects-grid .project-card');
   const emptyState = document.getElementById('projects-empty-state');
@@ -145,6 +164,79 @@ function filterProjects(category) {
     emptyState.style.display = 'none';
     emptyState.style.opacity = '0';
   }
+}
+
+// Initialize Project Counts on filters
+function updateFilterCounts() {
+  const cards = document.querySelectorAll('.projects-grid .project-card');
+  const counts = {
+    all: cards.length,
+    fullstack: 0,
+    webdev: 0,
+    ai: 0,
+    game: 0,
+    cli: 0
+  };
+  
+  cards.forEach(card => {
+    const cat = card.getAttribute('data-category');
+    if (cat && cat in counts) {
+      counts[cat]++;
+    }
+  });
+
+  // Update counts in mobile drawer option elements
+  for (const [cat, count] of Object.entries(counts)) {
+    const optCountEl = document.querySelector(`.mobile-filter-opt[data-category="${cat}"] .opt-count`);
+    if (optCountEl) {
+      optCountEl.textContent = count;
+    }
+  }
+}
+
+// Mobile Filter Open/Close Functions
+function openMobileFilter() {
+  const drawer = document.getElementById('mobile-filter-drawer');
+  const content = document.getElementById('mobile-filter-content');
+  
+  // Update counts before opening
+  updateFilterCounts();
+
+  drawer.classList.remove('hidden');
+  document.body.classList.add('modal-active'); // prevents body scroll
+  
+  // Rotate chevron in trigger
+  const chevron = document.querySelector('#mobile-filter-trigger .chevron');
+  if (chevron) chevron.style.transform = 'translateY(-1px) rotate(180deg)';
+
+  // Force reflow
+  void drawer.offsetWidth;
+  
+  drawer.classList.add('open');
+}
+
+// Close Mobile Filter
+function closeMobileFilter() {
+  const drawer = document.getElementById('mobile-filter-drawer');
+  
+  // Rotate chevron back
+  const chevron = document.querySelector('#mobile-filter-trigger .chevron');
+  if (chevron) chevron.style.transform = 'translateY(0) rotate(0deg)';
+
+  drawer.classList.remove('open');
+  document.body.classList.remove('modal-active');
+
+  setTimeout(() => {
+    if (!drawer.classList.contains('open')) {
+      drawer.classList.add('hidden');
+    }
+  }, 300);
+}
+
+// When a mobile filter option is tapped
+function selectMobileFilter(category) {
+  filterProjects(category);
+  closeMobileFilter();
 }
 
 
@@ -609,6 +701,7 @@ window.addEventListener('load', () => {
   setTimeout(() => {
     document.body.classList.add('loaded');
   }, 800);
+  updateFilterCounts();
 });
 
 // Top Scroll Progress Bar Logic
