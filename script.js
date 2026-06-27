@@ -34,7 +34,7 @@ const projectsData = {
     title: 'Subscription Manager',
     tag: 'Full Stack',
     category: 'fullstack',
-    desc: 'An upcoming subscription management tool designed to track recurring payments, set renewal alerts, analyze monthly spending, and optimize overall subscription expenses.',
+    desc: 'An upcoming subscription management tool that aggregates and tracks all your active subscriptions in one place by detecting them via your phone number and email address, allowing you to review, manage, and optimize recurring payments effortlessly.',
     stack: ['React', 'Node.js', 'MongoDB', 'Express'],
     img: 'https://images.unsplash.com/photo-1554415707-6e8cfc93fe23?q=80&w=2070&auto=format&fit=crop',
     live: '#',
