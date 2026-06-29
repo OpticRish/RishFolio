@@ -53,8 +53,8 @@ const projectsData = {
   },
   'techfest3d': {
     title: 'TechFest 3D | Hyper-Space Nexus',
-    tag: 'Full Stack',
-    category: 'fullstack',
+    tag: 'Full Stack | Web Dev',
+    category: 'fullstack webdev',
     desc: 'An interactive, futuristic 3D website built using Three.js and GSAP (GreenSock). The concept revolves around a "Hyper-Space Nexus"—a digital corridor filled with floating crystalline polyhedrons, neon energy paths, and interactive digital dust.',
     stack: ['Three.js', 'GSAP', 'HTML', 'CSS'],
     img: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2020&auto=format&fit=crop',
@@ -181,7 +181,7 @@ function filterProjects(category) {
   // Handle projects transition
   cards.forEach(card => {
     const cardCategory = card.getAttribute('data-category');
-    const matches = (category === 'all' || cardCategory === category);
+    const matches = (category === 'all' || (cardCategory && cardCategory.split(' ').includes(category)));
 
     if (matches) {
       visibleCount++;
@@ -744,7 +744,7 @@ function handleFormSubmit(event) {
   return false;
 }
 
-window.addEventListener('load', () => {
+document.addEventListener('DOMContentLoaded', () => {
   // Mark session as started so subsequent page loads skip the loader
   const isFirstLoad = !sessionStorage.getItem('hasLoadedBefore');
   if (isFirstLoad) {

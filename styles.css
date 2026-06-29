@@ -2098,11 +2098,11 @@ body.modal-active {
 }
 
 .page.active.swipe-left-anim, .section-page.active.swipe-left-anim {
-  animation: swipeLeftEnter 0.65s cubic-bezier(0.22, 1, 0.36, 1) both !important;
+  animation: swipeLeftEnter 0.3s cubic-bezier(0.22, 1, 0.36, 1) both !important;
 }
 
 .page.active.swipe-right-anim, .section-page.active.swipe-right-anim {
-  animation: swipeRightEnter 0.65s cubic-bezier(0.22, 1, 0.36, 1) both !important;
+  animation: swipeRightEnter 0.3s cubic-bezier(0.22, 1, 0.36, 1) both !important;
 }
 
 /* Skip loading screen styles */
