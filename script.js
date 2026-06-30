@@ -61,6 +61,16 @@ const projectsData = {
     live: '#',
     github: 'https://github.com/OpticRish/TechFest3D',
     liveComingSoon: true
+  },
+  'rishfolio': {
+    title: 'RishFolio (AI Portfolio)',
+    tag: 'Full Stack | AI',
+    category: 'fullstack ai',
+    desc: 'A meticulously crafted digital portfolio designed to reflect my personal brand and creative vision. It features a sleek dark mode aesthetic, smooth micro-animations, and a highly interactive UI to present my projects and skills beautifully. The site serves as a complete digital identity, offering visitors a dynamic and premium browsing experience.',
+    stack: ['Vercel', 'Gemini AI', 'HTML', 'JavaScript'],
+    img: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=2000&auto=format&fit=crop',
+    live: 'https://rishfolio15.vercel.app',
+    github: 'https://github.com/OpticRish/RishFolio'
   }
 };
 
