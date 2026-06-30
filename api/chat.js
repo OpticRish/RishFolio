@@ -60,7 +60,7 @@ If the user asks something outside this context, politely let them know you are 
     if (!response.ok) {
       const errText = await response.text();
       console.error('Gemini API Error:', errText);
-      return res.status(500).json({ error: 'Failed to generate response' });
+      return res.status(500).json({ error: 'Failed to generate response', details: errText });
     }
 
     const data = await response.json();
