@@ -51,7 +51,7 @@ If the user asks something outside this context, politely let them know you are 
           }
         ],
         generationConfig: {
-          maxOutputTokens: 250,
+          maxOutputTokens: 1000,
           temperature: 0.7,
         }
       })
